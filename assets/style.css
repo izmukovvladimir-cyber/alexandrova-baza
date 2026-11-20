@@ -351,3 +351,92 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
   .ssor-share img{max-width:none}
   .calc-how{padding:22px 20px}
 }
+
+/* Ряд калькуляторов на главной */
+.calc-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cr-k{grid-column:1/-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.calc-link{background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:4px;box-shadow:inset 0 0 0 2px var(--accent);transition:background .2s}
+.calc-link:hover{background:#fbf8ff}
+.cl-s{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.cl-t{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--brand);line-height:1.1;font-variant-numeric:lining-nums}
+.cl-d{font-size:14px;color:var(--muted);flex:1}
+.cl-go{color:var(--accent);font-weight:700;font-size:14px;margin-top:6px}
+
+/* Форма с одной датой и статусом */
+.calc-form-one{grid-template-columns:1fr;max-width:720px;gap:14px}
+.calc-form-one .calc-field{max-width:320px}
+.calc-form-one .calc-go{margin-top:4px;justify-self:start}
+.calc-status{border:0;padding:0;min-width:0}
+.calc-status legend{font-size:14px;font-weight:700;color:var(--brand);margin-bottom:8px}
+.st-row{display:flex;flex-wrap:wrap;gap:8px}
+.st-opt{position:relative;cursor:pointer}
+.st-opt input{position:absolute;opacity:0;width:1px;height:1px}
+.st-opt span{display:inline-block;border:1.5px solid var(--line);border-radius:12px;padding:11px 16px;font-size:15px;font-weight:600;color:var(--ink);background:#fff;transition:background .15s,border-color .15s}
+.st-opt:hover span{border-color:var(--accent)}
+.st-opt input:checked+span{background:var(--brand);border-color:var(--brand);color:#fff}
+.st-opt input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.calc-status .calc-err{display:block;margin-top:6px}
+.calc-explain{background:var(--bg);border-radius:16px;padding:16px 20px}
+.calc-explain h2{font-size:16px;margin-bottom:4px;color:var(--brand)}
+.calc-explain p{font-size:15px;line-height:1.55;color:#3b2d52}
+
+/* Загрузка */
+.calc-loading{background:#fff;border-radius:var(--radius);padding:56px 24px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.calc-loading[hidden],#tormoz-content[hidden]{display:none}
+.calc-loading p{font-size:18px;font-weight:600;color:var(--brand)}
+.spin{width:54px;height:54px;border-radius:50%;border:5px solid var(--soft);border-top-color:var(--accent);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation-duration:3s}}
+
+/* Результат: денежный тормоз и формат */
+.tz-head{display:flex;align-items:center;gap:20px;margin-bottom:14px}
+.tz-digit{flex:none;width:96px;height:96px;border-radius:24px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:700;font-variant-numeric:lining-nums}
+.tz-count{font-size:22px;font-weight:700;color:var(--ink);line-height:1.3}
+.tz-date{font-size:14px;color:#9a8db0;margin-top:2px}
+.tz-tie{font-size:15px;color:var(--muted);margin-bottom:6px}
+.tz-block{margin-top:16px;border-radius:18px;padding:18px 20px;background:var(--bg)}
+.tz-block.minus{background:#fbf3f6}
+.tz-block.step{background:#fff;box-shadow:inset 0 0 0 2px var(--accent)}
+.tz-label{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.tz-block.minus .tz-label{color:#a3355a}
+.tz-text{font-size:16.5px;line-height:1.6;color:#3b2d52}
+.tz-st{margin-top:10px}
+.tz-st b{color:var(--brand)}
+.fm-head{font-family:var(--serif);font-size:44px;line-height:1.08;color:var(--brand);margin-bottom:6px}
+.fm-scales{display:flex;flex-direction:column;gap:14px;margin:18px 0 4px}
+.fm-scale{background:var(--bg);border-radius:18px;padding:16px 20px}
+.fm-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.fm-name{font-weight:700;font-size:15.5px;color:var(--ink)}
+.fm-word{flex:none;font-size:14px;color:var(--brand);text-transform:uppercase;letter-spacing:.06em}
+.fm-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+.fm-bar span{height:10px;border-radius:6px;background:#dccdf0}
+.fm-bar span.on{background:var(--accent)}
+
+/* Закрытая карточка */
+.lock-card{position:relative;margin-top:28px;border-radius:22px;overflow:hidden;background:var(--brand);color:#fff}
+.lock-ghost{position:absolute;inset:0;padding:34px;display:flex;flex-direction:column;gap:14px;filter:blur(6px);opacity:.28}
+.lock-ghost span{display:block;height:16px;border-radius:8px;background:#fff}
+.lock-body{position:relative;padding:34px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.lock-ic{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.lock-body .kicker{color:#d5c1f2;margin:0}
+.lock-body h2{font-size:26px;line-height:1.25;color:#fff}
+.lock-body p{color:#eadff9;font-size:16px;max-width:640px}
+.lock-body .btn{margin-top:10px;white-space:normal;text-align:center}
+
+@media (max-width:980px){
+  .calc-row{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .calc-row{order:1;gap:10px}
+  .calc-link{padding:16px}
+  .calc-form-one .calc-field{max-width:none}
+  .calc-form-one .calc-go{justify-self:stretch}
+  .st-opt{flex:1 1 100%}
+  .st-opt span{display:block;text-align:center}
+  .tz-digit{width:76px;height:76px;font-size:46px;border-radius:20px}
+  .tz-count{font-size:19px}
+  .tz-text{font-size:16px}
+  .fm-head{font-size:34px}
+  .lock-body{padding:26px 20px}
+  .lock-body .btn{width:100%}
+}
