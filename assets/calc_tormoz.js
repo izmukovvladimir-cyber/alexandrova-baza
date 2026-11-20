@@ -11,7 +11,7 @@
   var ORDER = [5, 9, 6, 1, 2, 3, 4, 7, 8];
   var WEBINAR_DIGITS = [5, 9, 6, 1];
   var STATUSES = [
-    { key: "hire", label: "Работаю по найму" },
+    { key: "hire", label: "Работаю в найме" },
     { key: "free", label: "Фриланс или своё дело" },
     { key: "pause", label: "В декрете или в поиске" }
   ];
