@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ваш сценарий ссор · База знаний школы Аллы Александровой</title>
+<meta name="description" content="Калькулятор пары: введите две даты рождения и узнайте, по какому сценарию вы ссоритесь.">
+<meta property="og:title" content="Ваш сценарий ссор · База знаний школы Аллы Александровой">
+<meta property="og:description" content="Калькулятор пары: введите две даты рождения и узнайте, по какому сценарию вы ссоритесь.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-root="../">
+<header class="nav"><div class="container">
+<a class="logo" href="../index.html"><span class="logo-mark">9</span><span>База знаний школы<small>Цифровой психоанализ Аллы Александровой</small></span></a>
+<nav class="links" aria-label="Основное меню"><a href="../index.html#sections">Разделы</a><a href="../index.html#gifts">Подарки</a><a href="../section/psychomatrix.html">Психоматрица с нуля</a></nav>
+<a class="nav-cta" href="../gift.html">Подарки</a>
+</div></header>
+<main>
+<div class="container">
+<nav class="crumbs" aria-label="Навигация"><a href="../index.html">База знаний</a><span aria-hidden="true">/</span><a href="../section/relations.html">Отношения</a><span aria-hidden="true">/</span><span>Ваш сценарий ссор</span></nav>
+<section class="calc-hero">
+<p class="kicker">Калькулятор пары</p>
+<h1>Ваш <em>сценарий ссор</em></h1>
+<p class="lead">Введите свою дату рождения и дату партнёра. За минуту узнаете, по какому сценарию вы ссоритесь.</p>
+<form class="calc-form" id="ssor-form" novalidate>
+<div class="calc-field"><label for="date-a">Ваша дата рождения</label>
+<input id="date-a" name="a" type="text" inputmode="numeric" autocomplete="off" placeholder="дд.мм.гггг" maxlength="10" aria-describedby="date-a-err">
+<span class="calc-err" id="date-a-err" aria-live="polite"></span></div>
+<div class="calc-field"><label for="date-b">Дата рождения партнёра</label>
+<input id="date-b" name="b" type="text" inputmode="numeric" autocomplete="off" placeholder="дд.мм.гггг" maxlength="10" aria-describedby="date-b-err">
+<span class="calc-err" id="date-b-err" aria-live="polite"></span></div>
+<button class="btn btn-brand calc-go" type="submit">Узнать, почему мы ругаемся</button>
+</form>
+<p class="calc-privacy">Даты никуда не отправляются: расчёт идёт прямо на этой странице.</p>
+</section>
+<section class="calc-result" id="ssor-result" hidden aria-live="polite">
+<div class="ssor-grid">
+<article class="ssor-card" id="ssor-card"></article>
+<div class="ssor-share">
+<h3>Картинка для отправки</h3>
+<p>Сохраните её или отправьте партнёру и подруге.</p>
+<img id="ssor-png" alt="Карточка с вашим сценарием ссор" width="1080" height="1350">
+<div class="ssor-btns">
+<a class="btn btn-brand" id="ssor-save" download="scenariy-ssor.png" href="#">Сохранить картинку</a>
+<button class="btn btn-soft" id="ssor-share" type="button">Поделиться</button>
+</div>
+<p class="ssor-status" id="ssor-status" aria-live="polite"></p>
+</div>
+</div>
+<div class="cta">
+<div><h2>Как вам договориться</h2>
+<p>На бесплатном эфире «Отношения» школа показывает, как по датам рождения читать пару целиком. Совместимость в школе называют инструкцией к взаимодействию.</p></div>
+<a class="btn btn-white" id="ssor-cta" href="https://alexandrova-numerology.com/sait_relation?utm_source=instagram&utm_medium=calculator&utm_campaign=calc_ssor" target="_blank" rel="noopener">Записаться на бесплатный эфир «Отношения»</a>
+</div>
+<p class="calc-note">Расчёт по методу цифрового психоанализа школы Аллы Александровой. Не заменяет консультацию психолога.</p>
+</section>
+<section class="calc-how">
+<h2>Как считаем</h2>
+<p>По дате рождения строится психоматрица, квадрат три на три. Двойки в ней отвечают за энергию и общение. В отношениях на них смотрят первыми вместе с единицами, которые показывают характер.</p>
+<p>Хотите посчитать весь квадрат сами? <a href="../article/kak-poschitat-psihomatricu.html">Пошаговый расчёт психоматрицы</a></p>
+</section>
+<canvas id="ssor-canvas" width="1080" height="1350" hidden></canvas>
+</div>
+<script src="../assets/calc_ssor.js"></script>
+</main>
+<footer><div class="container"><span>Школа нумерологии и цифрового психоанализа Аллы Александровой</span><span>Материалы базы помогают лучше понять себя и не заменяют консультацию врача, психолога или финансового специалиста.</span></div></footer>
+<script>window.KB_ARTICLES=[{"title": "Карта невидимых долгов", "tags": ["долги", "деньги", "упражнение", "лид-магнит", "карта"], "section": "Деньги и долги", "ready": true, "url": "article/karta-nevidimyh-dolgov.html"}, {"title": "Невидимые долги: что не видно в банковском приложении", "tags": ["долги", "деньги", "обещания"], "section": "Деньги и долги", "ready": false, "url": "section/money.html#a2"}, {"title": "Личная карта долгов: упражнение из четырёх пунктов", "tags": ["долги", "деньги", "упражнение"], "section": "Деньги и долги", "ready": false, "url": "section/money.html#a3"}, {"title": "«Стратегия должника»: когда вы всем обязаны даже без кредитов", "tags": ["долги", "деньги", "доход"], "section": "Деньги и долги", "ready": false, "url": "section/money.html#a4"}, {"title": "Девятка в психоматрице: опыт, знания и дела, которые не доведены до конца", "tags": ["долги", "психоматрица", "цифры", "девятка"], "section": "Деньги и долги", "ready": false, "url": "section/money.html#a5"}, {"title": "Карта ваших ссор", "tags": ["отношения", "ссоры", "упражнение", "лид-магнит", "карта"], "section": "Отношения", "ready": true, "url": "article/karta-vashih-ssor.html"}, {"title": "Калькулятор: ваш сценарий ссор", "tags": ["отношения", "ссоры", "калькулятор", "совместимость", "пара", "двойки", "дата рождения"], "section": "Отношения", "ready": true, "url": "calc/scenariy-ssor.html"}, {"title": "Единицы и двойки: с чего начинают разбор пары", "tags": ["отношения", "совместимость", "пара"], "section": "Отношения", "ready": false, "url": "section/relations.html#a3"}, {"title": "Совместимость по дате рождения как инструкция к взаимодействию", "tags": ["отношения", "совместимость"], "section": "Отношения", "ready": false, "url": "section/relations.html#a4"}, {"title": "Созвучие дополнительных чисел: откуда сильная связь между людьми", "tags": ["отношения", "созвучие", "дополнительные числа"], "section": "Отношения", "ready": false, "url": "section/relations.html#a5"}, {"title": "Куда уходят ваши силы", "tags": ["реализация", "надо", "хочу", "упражнение", "лид-магнит", "единицы"], "section": "Женская реализация", "ready": true, "url": "article/kuda-uhodyat-sily.html"}, {"title": "Когда жизнь складывается из слова «надо»", "tags": ["реализация", "предназначение"], "section": "Женская реализация", "ready": false, "url": "section/realization.html#a2"}, {"title": "Основа и цель: что говорят дополнительные числа", "tags": ["реализация", "дополнительные числа", "предназначение"], "section": "Женская реализация", "ready": false, "url": "section/realization.html#a3"}, {"title": "Потенциал и самооценка: почему эти линии читают вместе", "tags": ["реализация", "линии", "самооценка"], "section": "Женская реализация", "ready": false, "url": "section/realization.html#a4"}, {"title": "Как посчитать психоматрицу по дате рождения", "tags": ["психоматрица", "расчёт", "дата рождения", "дополнительные числа", "линии", "как посчитать"], "section": "Психоматрица с нуля", "ready": true, "url": "article/kak-poschitat-psihomatricu.html"}, {"title": "Что значит каждая цифра от 1 до 9", "tags": ["психоматрица", "цифры", "клетки"], "section": "Психоматрица с нуля", "ready": false, "url": "section/psychomatrix.html#a2"}, {"title": "Пустая клетка: что значит, если цифры нет", "tags": ["психоматрица", "клетки"], "section": "Психоматрица с нуля", "ready": false, "url": "section/psychomatrix.html#a3"}, {"title": "Восемь линий психоматрицы и что они показывают", "tags": ["психоматрица", "линии"], "section": "Психоматрица с нуля", "ready": false, "url": "section/psychomatrix.html#a4"}, {"title": "Что такое схема здоровья по дате рождения", "tags": ["здоровье", "ткм", "схема здоровья"], "section": "Китайская медицина и здоровье", "ready": false, "url": "section/tcm.html#a1"}, {"title": "Инь и Ян: как в курсе описывают два вида энергии", "tags": ["здоровье", "ткм", "инь ян"], "section": "Китайская медицина и здоровье", "ready": false, "url": "section/tcm.html#a2"}, {"title": "Пять элементов У-Син и связи между ними", "tags": ["здоровье", "ткм", "у-син", "органы"], "section": "Китайская медицина и здоровье", "ready": false, "url": "section/tcm.html#a3"}];window.KB_GIFTS={"psychomatrix": {"title": "Пособие по разбору психоматрицы", "from": "Подарок к разделам «Психоматрица с нуля» и «Женская реализация»", "text": "Посчитали свой квадрат и хотите понять, что он говорит? Заберите методическое пособие школы по разбору психоматрицы.", "items": ["Методическое пособие по разбору психоматрицы", "Автор: Алла Александрова"], "img": "art_grid", "bot": "#"}, "money": {"title": "Гайд «Как увеличить свой доход в условиях кризиса»", "from": "Подарок эфира «Деньги и долги»", "text": "Гайд из эфира школы о деньгах и долгах. В нём расчёт психоматрицы и ваш ключевой финансовый ресурс.", "items": ["Как самостоятельно рассчитать психоматрицу", "Ваш ключевой финансовый ресурс", "Мини-книга от школы"], "img": "money", "bot": "#"}, "love": {"title": "Гайд «Ваш язык любви»", "from": "Подарок эфира «Отношения»", "text": "Гайд из эфира школы об отношениях. С ним можно посчитать себя и партнёра.", "items": ["Гайд из эфира «Отношения»", "Чтобы посчитать себя и партнёра"], "img": "relations", "bot": "#"}};</script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
