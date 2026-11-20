@@ -449,3 +449,7 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
 .ssor-steps ol{margin:0;padding-left:22px;display:grid;gap:10px;font-size:17px;line-height:1.55;color:#3b2d52}
 .ssor-blind{border-left:4px solid var(--accent);background:#faf6ff;padding:16px 18px;border-radius:0 14px 14px 0}
 .ssor-blind .btn{margin-top:14px}
+
+.tz-steps{margin:0;padding-left:22px;display:grid;gap:10px;font-size:16.5px;line-height:1.55;color:#3b2d52}
+.tz-blind{background:#faf6ff;border-left:4px solid var(--accent);border-radius:0 18px 18px 0}
+.tz-blind .btn{margin-top:14px}
