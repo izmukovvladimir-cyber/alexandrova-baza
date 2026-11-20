@@ -263,3 +263,9 @@ footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:
   .item{display:grid;grid-template-columns:26px 1fr;align-items:start;gap:4px 12px}
   .item .st{grid-column:2;justify-self:start;margin:6px 0 0}
 }
+.prose table{border-collapse:collapse;width:100%;font-size:15px;display:block;overflow-x:auto}
+.prose th,.prose td{border:1px solid #e3d6f3;padding:8px 10px;vertical-align:top;text-align:left}
+.prose th{background:#f6f0fc}
+.prose ol{padding-left:22px}
+.prose hr{border:0;border-top:1px solid #e3d6f3;margin:32px 0}
+.prose a{color:var(--accent)}
