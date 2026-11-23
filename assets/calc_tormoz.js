@@ -1,7 +1,8 @@
-/* Калькулятор «Ваш денежный тормоз». Берёт самую сильную цифру психоматрицы и показывает её плюс и минус
-   в деньгах и работе. Расчёт квадрата в pm.js. Тексты собраны в work/kb_site/calc_tormoz_texts.md.
-   Самая сильная цифра: больше всего повторов. При равенстве порядок 5, 9, 6, 1 (их разбирают на эфире
-   «Деньги и долги»), дальше 2, 3, 4, 7, 8. */
+/* Калькулятор «Ваш денежный тормоз». Берёт ведущую цифру психоматрицы и показывает её плюс и минус
+   в деньгах и работе. Расчёт психоматрицы в pm.js. Тексты собраны в work/kb_site/calc_tormoz_texts.md.
+   Ведущая цифра (23.11, сверка с курсом): IV доп. число, «ведущее свойство человека, его главный ресурс»
+   (course/kb_st1.md:186). IV = 10, 11, 12 даёт ведущую единицу (kb_st1.md:1648). IV = 0 (редко):
+   берём II, второе ведущее место (kb_st1.md:1203). */
 (function () {
   "use strict";
   var NODE = typeof module !== "undefined" && module.exports;
@@ -139,7 +140,7 @@
   "8": {
     "plusShort": "Надёжность и верность слову",
     "minusShort": "Тянете чужое бесплатно",
-    "diag": "На вас можно положиться: вы держите слово и помогаете, когда просят. Тормоз в том, что вы берёте на себя чужие обязательства. На бесплатном эфире школы «Деньги и долги» эту схему описали так: «Сначала я в долгу, потом они в долгу».",
+    "diag": "На вас можно положиться: вы держите слово и помогаете, когда просят. Тормоз в том, что вы берёте на себя чужие обязательства. На бесплатном эфире школы «Деньги и долги» это назвали стратегией должника: новые деньги сразу уходят на чужие проблемы и новые обязательства.",
     "scene": {
       "hire": "Коллега просит закрыть его отчёт «только в этот раз». Вы соглашаетесь, потом ещё раз, и задерживаетесь без доплаты. На премии хвалят его результаты.",
       "free": "Клиент просит «маленькую правку», потом ещё одну. Назвать доплату неловко, проект выходит в полтора раза больше оговорённого. Следующий заказ от него берёте и заранее знаете, что правок будет столько же.",
@@ -168,10 +169,15 @@
   }
 };
 
-  function strongest(cells) {
-    var best = ORDER[0];
-    ORDER.forEach(function (k) { if (cells[k] > cells[best]) best = k; });
-    return best;
+  function leadOf(n) {
+    if (n >= 10) return 1;
+    return n;
+  }
+
+  function strongest(dops) {
+    var k = leadOf(dops[3]);
+    if (k === 0) k = leadOf(dops[1]);
+    return k;
   }
 
   function countWord(n, k) {
@@ -181,22 +187,15 @@
 
   function result(p, statusIdx) {
     var mx = PM.matrix(p.d, p.m, p.y);
-    var k = strongest(mx.cells);
+    var k = strongest(mx.dops);
     var n = mx.cells[k];
     var status = STATUSES[statusIdx];
-    var ties = ORDER.filter(function (x) { return x !== k && mx.cells[x] === n; });
-    var tie = "";
-    if (ties.length) {
-      var others = ties.map(function (x) { return NAMES[x][2]; });
-      var list = others.length === 1 ? others[0] : others.slice(0, -1).join(", ") + " и " + others[others.length - 1];
-      tie = "Столько же у вас " + list + ". Здесь разбираем " + NAMES[k][3]
-        + (WEBINAR_DIGITS.indexOf(k) >= 0 ? ": её разбирали на эфире «Деньги и долги»." : ".");
-    }
+    var tie = "Полная картина видна по всей психоматрице: здесь разбираем только ведущую цифру.";
     var d = DIGITS[k];
     var cw = countWord(n, k);
     return {
       digit: k, count: n, cells: mx.cells, status: status.key, statusLabel: status.label,
-      countLine: "У вас в квадрате " + cw + ".",
+      countLine: "Ваша ведущая цифра: " + NAMES[k][0] + ".",
       tie: tie, diag: d.diag.replace("{N}", cw.charAt(0).toUpperCase() + cw.slice(1)),
       scene: d.scene[status.key], steps: d.steps, blind: d.blind,
       plusShort: d.plusShort, minusShort: d.minusShort
