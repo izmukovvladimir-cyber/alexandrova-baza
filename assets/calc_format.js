@@ -291,7 +291,9 @@
     bl.appendChild(go);
     card.appendChild(bl);
     box.hidden = false;
+    var gen = state.gen = (state.gen || 0) + 1;
     return drawPng(r).then(function (blob) {
+      if (gen !== state.gen) return r; /* пришёл новый расчёт, старую картинку не ставим */
       state.blob = blob;
       if (state.url) URL.revokeObjectURL(state.url);
       state.url = URL.createObjectURL(blob);
@@ -359,7 +361,7 @@
   var q = new URLSearchParams(location.search);
   if (q.get("d")) {
     inDate.value = PM.mask(q.get("d"));
-    var si = Math.max(0, Math.min(STATUSES.length - 1, Number(q.get("s") || 1) - 1));
+    var sn = parseInt(q.get("s") || "1", 10); var si = (sn >= 1 && sn <= STATUSES.length) ? sn - 1 : 0;
     var radio = form.querySelector('input[name="status"][value="' + si + '"]');
     if (radio) radio.checked = true;
     var p = checkDate();
