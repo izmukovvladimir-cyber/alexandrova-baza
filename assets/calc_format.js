@@ -361,7 +361,7 @@
   var q = new URLSearchParams(location.search);
   if (q.get("d")) {
     inDate.value = PM.mask(q.get("d"));
-    var sn = parseInt(q.get("s") || "1", 10); var si = (sn >= 1 && sn <= STATUSES.length) ? sn - 1 : 0;
+    var sr = q.get("s") || "1"; var sn = /^[0-9]+$/.test(sr) ? Number(sr) : 0; var si = (sn >= 1 && sn <= STATUSES.length) ? sn - 1 : 0;
     var radio = form.querySelector('input[name="status"][value="' + si + '"]');
     if (radio) radio.checked = true;
     var p = checkDate();
