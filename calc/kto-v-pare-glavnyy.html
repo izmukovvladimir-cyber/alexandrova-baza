@@ -25,15 +25,15 @@
 .para-tab{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin:0 0 14px}
 .para-tab th,.para-tab td{padding:12px 10px;border-bottom:1px solid #eee5fa;text-align:center;font-size:16px}
 .para-tab td:first-child{text-align:left;color:var(--muted);font-size:14px}.para-tab td+td{font-weight:700;color:var(--brand);letter-spacing:1px}
-.byta-card h2{margin:0 0 8px}.byta-card p{margin:0}.ssor-card+.ssor-card{margin-top:14px}
+.byta-card h2{margin:0 0 8px}.byta-card p{margin:0}.byta-card p.para-p+p.para-p{margin-top:12px}.para-p strong{color:var(--brand)}.ssor-card+.ssor-card{margin-top:14px}
 .para-form{grid-template-columns:1fr!important}.para-form .calc-go{justify-self:stretch}</style>
 <nav class="crumbs" aria-label="Навигация"><a href="../index.html">База знаний</a><span aria-hidden="true">/</span><a href="../section/relations.html">Отношения</a><span aria-hidden="true">/</span><span>Кто в паре главный</span></nav>
 <section class="calc-hero">
 <p class="kicker">Калькулятор по двум датам рождения</p>
 <h1>Кто в вашей паре <em>главный</em></h1>
-<p class="lead">В одной паре решения принимаются легко, в другой каждый тянет одеяло на себя. Один моет посуду без напоминаний, другой не замечает гору в раковине. Это видно по датам рождения: в психоматрице единицы отвечают за характер, шестёрки за труд и быт.</p>
+<p class="lead">В одной паре решения принимаются легко, в другой каждый тянет одеяло на себя. Один моет посуду без напоминаний, другой не замечает гору в раковине. Это видно по датам рождения: в психоматрице единицы отвечают за характер, шестёрки за труд и быт, восьмёрки за терпение. Цифры считаются по дате и по дополнительным числам, поэтому их может быть больше, чем вы видите в самой дате.</p>
 <p class="lead byta-get">Введите свою дату и дату партнёра и сразу увидите:</p>
-<ul class="byta-list"><li>кто в вашей паре ведёт, а кто идёт следом;</li><li>кому из вас легче даётся быт и как делить домашние дела без ссор.</li></ul>
+<ul class="byta-list"><li>кто в вашей паре ведёт, а кто идёт следом, и где у вас могут быть трения;</li><li>кому из вас легче даётся быт и как делить домашние дела без ссор;</li><li>кто из вас умеет гасить ссоры.</li></ul>
 <form class="calc-form para-form" id="para-form" novalidate>
 <div class="calc-field"><label for="date-a">Ваша дата рождения</label>
 <input id="date-a" name="a" type="text" inputmode="numeric" autocomplete="off" placeholder="дд.мм.гггг" maxlength="10" aria-describedby="date-a-err">
@@ -47,9 +47,10 @@
 </section>
 <section class="calc-result" id="para-result" hidden aria-live="polite">
 <table class="para-tab" id="para-tab"></table>
-<article class="ssor-card byta-card"><h2>Кто в паре главный</h2><p id="para-1"></p></article>
-<article class="ssor-card byta-card"><h2>Кто тянет быт</h2><p id="para-6"></p></article>
-<p class="calc-note">Единицы и шестёрки это часть картины пары. Полную совместимость школа смотрит по обеим матрицам целиком.</p>
+<article class="ssor-card byta-card"><h2>Кто в паре главный</h2><div id="para-1"></div></article>
+<article class="ssor-card byta-card"><h2>Кто тянет быт</h2><div id="para-6"></div></article>
+<article class="ssor-card byta-card" id="para-8-card" hidden><h2>Терпение в ссоре</h2><div id="para-8"></div></article>
+<p class="calc-note">Единицы, шестёрки и восьмёрки это часть картины пары. Характер школа читает вместе с двойками, а иногда его усиливают дополнительные числа. Полную совместимость школа смотрит по обеим матрицам целиком.</p>
 </section>
 </div>
 <script src="../assets/pm.js"></script>
